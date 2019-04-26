@@ -4,14 +4,15 @@
   "registry": "npm",
   "description": "React DatePicker",
   "main": "dist/react-date-picker-cs.js",
-  "author": "Sam Chen",
-  "homepage": "https://github.com/chenxsan/react-date-picker-cs",
+  "author": "Thirumurugan + Dhivya Dandapani",
+  "forked_from": "https://github.com/chenxsan/react-date-picker-cs",
+  "homepage": "https://github.com/dhivyada/react-date-picker-cs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chenxsan/react-date-picker-cs.git"
+    "url": "https://github.com/dhivyada/react-date-picker-cs"
   },
   "bugs": {
-    "url": "https://github.com/chenxsan/react-date-picker-cs/issues"
+    "url": "https://github.com/dhivyada/react-date-picker-cs/issues"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
