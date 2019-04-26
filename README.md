@@ -1,7 +1,5 @@
 # React DatePicker
 
-React 日期组件。
-
 ## Demo
 
 Demo：[chenxsan.github.io/react-date-picker-cs](http://chenxsan.github.io/react-date-picker-cs/)
