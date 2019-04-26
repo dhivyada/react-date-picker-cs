@@ -68,18 +68,26 @@ export default class ReactDatePicker extends React.Component{
 	}
 
 	focusIn() {
+		this.onFocusChange(true);
+	}
+
+	onBlur() {
+		this.onFocusChange(false);	
+	}
+	
+	onFocusChange(isOpen) {
 		if (this.props.disabled === true) {
 			return;
 		}
 		this.setState({
-			isCalendarShow: true
+			isCalendarShow: isOpen
 		});
 	}
-
+	
 	render() {
 		return (
 			<div className="datePicker" onClick={(e) => this.onClickDatePickerArea(e)}>
-				<input className={`datePicker__input ${this.props.disabled === true ? 'datePicker__input--disabled' : ''}`} type='text' onFocus={() => this.focusIn()} value={this.props.value} readOnly disabled={this.props.disabled}/>
+				<input className={`datePicker__input ${this.props.disabled === true ? 'datePicker__input--disabled' : ''}`} type='text' onBlur={() => this.onBlur()} onFocus={() => this.focusIn()} value={this.props.value} readOnly disabled={this.props.disabled}/>
 				{this.state.isCalendarShow === false ? null : this.calender()}
 			</div>
 		);

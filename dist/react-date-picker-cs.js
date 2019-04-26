@@ -3612,11 +3612,21 @@ var ReactDatePicker = function (_React$Component) {
 	}, {
 		key: 'focusIn',
 		value: function focusIn() {
+			this.onFocusChange(true);
+		}
+	}, {
+		key: 'onBlur',
+		value: function onBlur() {
+			this.onFocusChange(false);
+		}
+	}, {
+		key: 'onFocusChange',
+		value: function onFocusChange(isOpen) {
 			if (this.props.disabled === true) {
 				return;
 			}
 			this.setState({
-				isCalendarShow: true
+				isCalendarShow: isOpen
 			});
 		}
 	}, {
@@ -3629,7 +3639,9 @@ var ReactDatePicker = function (_React$Component) {
 				{ className: 'datePicker', onClick: function onClick(e) {
 						return _this5.onClickDatePickerArea(e);
 					} },
-				react.createElement('input', { className: 'datePicker__input ' + (this.props.disabled === true ? 'datePicker__input--disabled' : ''), type: 'text', onFocus: function onFocus() {
+				react.createElement('input', { className: 'datePicker__input ' + (this.props.disabled === true ? 'datePicker__input--disabled' : ''), type: 'text', onBlur: function onBlur() {
+						return _this5.onBlur();
+					}, onFocus: function onFocus() {
 						return _this5.focusIn();
 					}, value: this.props.value, readOnly: true, disabled: this.props.disabled }),
 				this.state.isCalendarShow === false ? null : this.calender()
