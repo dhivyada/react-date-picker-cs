@@ -9,17 +9,14 @@ Demo：[chenxsan.github.io/react-date-picker-cs](http://chenxsan.github.io/react
 You can install it from npm:
 
 ```
-npm install react-date-picker-cs --save
+npm install dhivyada/react-date-picker-cs --save
 ```
 
-If you use [jspm](https://github.com/jspm/jspm-cli), then:
+or install via yarn
 
 ```
-jspm install npm:react-date-picker-cs
+yarn add dhivyada/react-date-picker-cs
 ```
-then `import DatePicker from 'react-date-picker-cs'` where you want to use.
-
-You can also link to `dist/react-date-picker-cs.js` and `dist/ReactDatePicker.css` in your HTML directly if you don't use some tools like browserify or webpack or jspm。
 
 ## Usage
 
