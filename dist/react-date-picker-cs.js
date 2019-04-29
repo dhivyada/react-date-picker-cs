@@ -3650,7 +3650,7 @@ var ReactDatePicker = function (_React$Component) {
 					{ onClick: function onClick() {
 							return _this5.toggleCalendarVisibility();
 						},
-						className: 'datePicker__input ' + (this.props.disabled === true ? 'datePicker__input--disabled' : ''),
+						className: 'datePicker__input ' + (this.props.disabled === true ? 'datePicker__input--disabled' : ''), style: { display: 'flex', justifyContent: 'space-between' },
 						disabled: this.props.disabled },
 					react.createElement(
 						'span',

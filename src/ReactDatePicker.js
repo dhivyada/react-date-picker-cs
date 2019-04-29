@@ -94,7 +94,7 @@ export default class ReactDatePicker extends React.Component {
 		return (
 			<div className="datePicker" onClick={(e) => this.onClickDatePickerArea(e)}>
 				<button onClick={() => this.toggleCalendarVisibility()}
-								className={`datePicker__input ${this.props.disabled === true ? 'datePicker__input--disabled' : ''}`}
+								className={`datePicker__input ${this.props.disabled === true ? 'datePicker__input--disabled' : ''}`} style={{display: 'flex', justifyContent: 'space-between'}}
 								disabled={this.props.disabled}>
 					<span style={{textAlign: 'left'}}>{this.props.value}</span>
 					{this.renderArrow()}
