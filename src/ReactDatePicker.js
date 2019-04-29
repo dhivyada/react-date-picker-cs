@@ -105,6 +105,8 @@ export default class ReactDatePicker extends React.Component {
 	}
 
 	renderArrow() {
-		return this.state.isCalendarShow ? <i className="up-arrow"/>: <i className="down-arrow"/>;
+		if(!this.props.disabled) {
+			return this.state.isCalendarShow ? <i className="up-arrow"/>: <i className="down-arrow"/>;
+		}
 	}
 };
