@@ -3665,7 +3665,9 @@ var ReactDatePicker = function (_React$Component) {
 	}, {
 		key: 'renderArrow',
 		value: function renderArrow() {
-			return this.state.isCalendarShow ? react.createElement('i', { className: 'up-arrow' }) : react.createElement('i', { className: 'down-arrow' });
+			if (!this.props.disabled) {
+				return this.state.isCalendarShow ? react.createElement('i', { className: 'up-arrow' }) : react.createElement('i', { className: 'down-arrow' });
+			}
 		}
 	}]);
 	return ReactDatePicker;
