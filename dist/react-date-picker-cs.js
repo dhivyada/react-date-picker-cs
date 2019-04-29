@@ -3605,7 +3605,8 @@ var ReactDatePicker = function (_React$Component) {
 
 			return react.createElement(Calendar, { onClickCalendar: function onClickCalendar(date) {
 					return _this4.onClickCalendar(date);
-				}, date: this.props.value, selectToday: function selectToday() {
+				}, date: this.props.value,
+				selectToday: function selectToday() {
 					return _this4.selectToday();
 				}, range: this.props.range, locale: this.props.locale });
 		}
@@ -3618,6 +3619,11 @@ var ReactDatePicker = function (_React$Component) {
 		key: 'onBlur',
 		value: function onBlur() {
 			this.onFocusChange(false);
+		}
+	}, {
+		key: 'toggleCalendarVisibility',
+		value: function toggleCalendarVisibility() {
+			this.onFocusChange(!this.state.isCalendarShow);
 		}
 	}, {
 		key: 'onFocusChange',
@@ -3639,13 +3645,27 @@ var ReactDatePicker = function (_React$Component) {
 				{ className: 'datePicker', onClick: function onClick(e) {
 						return _this5.onClickDatePickerArea(e);
 					} },
-				react.createElement('input', { className: 'datePicker__input ' + (this.props.disabled === true ? 'datePicker__input--disabled' : ''), type: 'text', onBlur: function onBlur() {
-						return _this5.onBlur();
-					}, onFocus: function onFocus() {
-						return _this5.focusIn();
-					}, value: this.props.value, readOnly: true, disabled: this.props.disabled }),
+				react.createElement(
+					'button',
+					{ onClick: function onClick() {
+							return _this5.toggleCalendarVisibility();
+						},
+						className: 'datePicker__input ' + (this.props.disabled === true ? 'datePicker__input--disabled' : ''),
+						disabled: this.props.disabled },
+					react.createElement(
+						'span',
+						{ style: { textAlign: 'left' } },
+						this.props.value
+					),
+					this.renderArrow()
+				),
 				this.state.isCalendarShow === false ? null : this.calender()
 			);
+		}
+	}, {
+		key: 'renderArrow',
+		value: function renderArrow() {
+			return this.state.isCalendarShow ? react.createElement('i', { className: 'up-arrow' }) : react.createElement('i', { className: 'down-arrow' });
 		}
 	}]);
 	return ReactDatePicker;
